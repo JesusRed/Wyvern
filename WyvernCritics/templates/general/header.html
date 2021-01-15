@@ -1,0 +1,44 @@
+{% load static %}
+
+<nav class="navbar is-dark">
+    <div class="px-6 navbar-brand">
+        <a class="navbar-item" href="{% url 'Home' %}">
+            <img src="{% static 'WyvernCritics/img/img-bar.svg' %}" alt="Wyvern: a modern critics and reviews site"
+                 width="112" height="28">
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarWyvern">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarWyvern" class="px-6 navbar-menu has-text-centered">
+        <div class="navbar-start">
+        </div>
+
+        <div class="navbar-end">
+            <a class="navbar-item" href="{% url 'Home' %}">
+                Home
+            </a>
+            <a class="navbar-item" href="{% url 'Posters' %}">
+                Posters
+            </a>
+            <a class="navbar-item" href="{% url 'Critics' %}">
+                Critics
+            </a>
+            <a class="navbar-item" href="{% url 'Forum' %}">
+                Forum
+            </a>
+            <a class="navbar-item" href="{% url 'Contact' %}">
+                Contact
+            </a>
+            <a class="navbar-item">
+                <button class="button is-black is-focused is-hovered is-outlined">
+                    <span>Login</span>
+                    <span class="icon"><i class="fas fa-user"></i></span>
+                </button>
+            </a>
+        </div>
+    </div>
+</nav>

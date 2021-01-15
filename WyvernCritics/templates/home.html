@@ -1,10 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "general/base.html" %}
 
-</body>
-</html>
+{% load static %}
+{% block title %}
+    | Home
+{% endblock title %}
+{% block content %}
+
+    <!-- ENCABEZADO GENERAL -->
+    <section class="hero is-primary is-medium">
+        <div class="hero-body is-dark bg-img">
+            <div class="container has-text-left">
+                <h1 class="title is-1">WYVERN CRITICS</h1>
+                <h2 class="subtitle is-3">Críticas y reviews de películas</h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENSAJE PRINCIPAL-->
+    <div class="container is-fullhd">
+        <div class="container has-text-centered">
+            <nav class="level">
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">Tweets</p>
+                        <p class="title">3,456</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">Following</p>
+                        <p class="title">123</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">Followers</p>
+                        <p class="title">456K</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">Likes</p>
+                        <p class="title">789</p>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+{% endblock %}
