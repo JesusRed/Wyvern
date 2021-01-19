@@ -1,10 +1,100 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "general/base.html" %}
 
-</body>
-</html>
+{% load static %}
+{% block title %}
+    | Contact
+{% endblock title %}
+{% block content %}
+
+    <!-- ENCABEZADO GENERAL -->
+    <section class="hero is-primary is-medium">
+        <div class="hero-body is-dark bg-img-contact">
+            <div class="container has-text-left-widescreen">
+                <blockquote class="background-color">
+                    <h1 class="title is-1">Necesitas contactarnos?</h1>
+                    <h3 class="subtitle is-4">Escoge cualquier medio y escribenos.</h3>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEXTO SECUNDARIO -->
+    <div class="container is-max-widescreen px-6 py-6">
+        <div class="columns ">
+            <div class="column is-one-third">
+                <h1 class="title is-2 is-spaced">
+                    Contact Us
+                </h1>
+                <p class="is-spaced">
+                    Nombre de la empresa
+                    <br>
+                    Direccion especifica
+                    <br>
+                    Ciudad, Pais, Codigo Postal
+                    <br>
+                    <br>
+                    <br>
+                    <strong>Telefono Principal: </strong>123-456789
+                    <br>
+                    <strong>Telefono Secundario: </strong>123-456789
+                </p>
+            </div>
+            <div class="column">
+                <h2 class="title is-2 is-spaced">Contact Form</h2>
+                <p class="subtitle is-6">Envianos un correo electronico</p>
+                <div class="field">
+                    <label class="label">Name</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Text input">
+                    </div>
+                </div>
+
+                <div class="columns">
+                    <div class="column is-one-third">
+                        <div class="field">
+                    <label class="label">Subject</label>
+                    <div class="control">
+                        <div class="select">
+                            <select>
+                                <option>Select dropdown</option>
+                                <option>With options</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                    <div class="column">
+                        <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
+                        <span class="icon is-small is-left">
+      <i class="fas fa-envelope"></i>
+    </span>
+                        <span class="icon is-small is-right">
+      <i class="fas fa-exclamation-triangle"></i>
+    </span>
+                    </div>
+                    <p class="help is-danger">This email is invalid</p>
+                </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Message</label>
+                    <div class="control">
+                        <textarea class="textarea" placeholder="Textarea"></textarea>
+                    </div>
+                </div>
+
+                <div class="field is-grouped has-text-centered">
+                    <div class="control">
+                        <button class="button is-black is-rounded is-focused is-outlined">Enviar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

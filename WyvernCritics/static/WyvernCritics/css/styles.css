@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Manjari&family=Montserrat:wght@500&display=swap');
 
 
-
 body {
     padding: 0;
     margin: 0;
@@ -13,6 +12,42 @@ body {
     background-color: #2f2f2f;
     background-image: url(../img/bg-img.jpg);
     background-position: bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.bg-img-posters {
+    background-color: #72706c;
+    background-image: url(https://images.unsplash.com/photo-1573917308539-f1ba0c83ae4e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.bg-img-critics {
+    background-color: #72706c;
+    background-image: url(https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.bg-img-forum {
+    background-color: #72706c;
+    background-image: url(https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1502&q=80);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.bg-img-contact {
+    background-color: #72706c;
+    background-image: url(https://images.unsplash.com/photo-1595270470433-4e07a5f1217d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80);
+    background-position: top;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -44,6 +79,18 @@ section .bg-img .container h2.subtitle {
     -webkit-text-stroke-color: #0a0a0a;
 }
 
+section .bg-img-posters .container h1.title {
+    color: #0a0a0a;
+    -webkit-text-stroke-width: 0.2px;
+    -webkit-text-stroke-color: #f2f2f2;
+}
+
+section .bg-img-posters .container h2.subtitle {
+    color: #f2f2f2;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #0a0a0a;
+}
+
 section .bg-img2 .container h1.title {
     color: #0a0a0a;
     -webkit-text-stroke-width: 0.2px;
@@ -56,48 +103,63 @@ section .bg-img2 .container h2.subtitle {
     -webkit-text-stroke-color: #0a0a0a;
 }
 
-.card-info .column p.title{
+.card-info .column p.title {
     color: #f2f2f2;
 }
 
-.card-info .column p.subtitle{
+.card-info .column p.subtitle {
     color: #f2f2f2;
 }
 
-footer .content h1{
+footer .content h1 {
     color: #fff;
 }
 
-footer .content h6{
+footer .content h6 {
     color: #fff;
 }
 
-.bottom .column a.icon{
+.bottom .column a.icon {
     color: #fff
 }
 
 
-
-.fa-facebook:hover{
+.fa-facebook:hover {
     color: #1d13d2
 }
 
-.fa-twitter:hover{
+.fa-twitter:hover {
     color: #1d72aa;
 }
 
-.fa-google:hover{
+.fa-google:hover {
     color: #db0c23;
 }
 
-.fa-linkedin-in:hover{
+.fa-linkedin-in:hover {
     color: #023151;
 }
 
-.fa-instagram-square:hover{
+.fa-instagram-square:hover {
     color: #8447c6
 }
 
-.fa-telegram:hover{
+.fa-telegram:hover {
     color: #49c7f8
+}
+
+.background-color{
+    background-color: rgba(0,0,0,0.18);
+}
+
+div.tile article.tile p.title{
+    color: #fff
+}
+
+div.tile article.tile p.subtitle{
+    color: #fff
+}
+
+div.tile article.tile div.content{
+    color: #fff
 }
