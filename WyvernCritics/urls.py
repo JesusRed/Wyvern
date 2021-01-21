@@ -1,6 +1,7 @@
 from django.urls import path
 from WyvernCritics import views
 
+
 urlpatterns = [
     path('', views.home, name="Home"),
     path('posters', views.posters, name="Posters"),
