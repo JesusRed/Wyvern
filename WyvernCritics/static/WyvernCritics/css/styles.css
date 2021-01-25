@@ -148,18 +148,26 @@ footer .content h6 {
     color: #49c7f8
 }
 
-.background-color{
-    background-color: rgba(0,0,0,0.18);
+.background-color {
+    background-color: rgba(0, 0, 0, 0.18);
 }
 
-div.tile article.tile p.title{
+div.tile article.tile p.title {
     color: #fff
 }
 
-div.tile article.tile p.subtitle{
+div.tile article.tile p.subtitle {
     color: #fff
 }
 
-div.tile article.tile div.content{
+div.tile article.tile div.content {
     color: #fff
+}
+
+div.container div.columns div.column div.card div.card-content h6.subtitle.is-6 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

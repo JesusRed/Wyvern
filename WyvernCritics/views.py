@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse
+from WyvernAdmin.models import Poster
 
 
 # Create your views here.
@@ -8,7 +9,8 @@ def home(request):
 
 
 def posters(request):
-    return render(request, "posters.html")
+    posters = Poster.objects.all()
+    return render(request, "posters.html", {"posters": posters})
 
 
 def critics(request):

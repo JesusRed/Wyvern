@@ -1,13 +1,15 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 
+
 # Create your models here.
 
 class Poster(models.Model):
     titulo = models.CharField(max_length=50)
     sinopsis = models.CharField(max_length=500)
     imagen = models.ImageField(upload_to='posters')
-    calificacion = models.DecimalField(max_digits=2, decimal_places=1, validators=[MaxValueValidator(5), MinValueValidator(0)])
+    calificacion = models.DecimalField(max_digits=2, decimal_places=1,
+                                       validators=[MaxValueValidator(5), MinValueValidator(0)])
     created = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now_add=True)
 
