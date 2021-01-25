@@ -6,4 +6,4 @@ from WyvernPosters.models import Poster
 
 def posters(request):
     posters = Poster.objects.all()
-    return render(request, "posters/posters.html", {"posters": posters})
+    return render(request, "posters.html", {"posters": posters})

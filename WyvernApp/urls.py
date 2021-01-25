@@ -1,5 +1,5 @@
 from django.urls import path
-from WyvernCritics import views
+from WyvernApp import views
 
 
 urlpatterns = [

@@ -18,12 +18,12 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from WyvernCritics import views
+from WyvernApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('posters/', include('WyvernPosters.urls')),
-    path('', include('WyvernCritics.urls'))
+    path('', include('WyvernApp.urls'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
