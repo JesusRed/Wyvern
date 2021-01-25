@@ -3,7 +3,8 @@
 <nav class="navbar is-dark">
     <div class="px-6 navbar-brand">
         <a class="navbar-item" href="{% url 'Home' %}">
-            <img src="{% static 'WyvernCritics/../../../media/critics/img/img-bar.svg' %}" alt="Wyvern: a modern critics and reviews site"
+            <img src="{% static '../../../media/general/img/img-bar.svg' %}"
+                 alt="Wyvern: a modern critics and reviews site"
                  width="112" height="28">
         </a>
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarWyvern">
@@ -24,7 +25,7 @@
             <a class="navbar-item {% if request.path == '/posters' %} is-active {% endif %}" href="{% url 'Posters' %}">
                 Posters
             </a>
-            <a class="navbar-item {% if request.path == '/critics' %} is-active {% endif %}" href="{% url 'Critics' %}">
+            <a class="navbar-item {% if request.path == '/general' %} is-active {% endif %}" href="{% url 'Critics' %}">
                 Critics
             </a>
             <a class="navbar-item {% if request.path == '/forum' %} is-active {% endif %}" href="{% url 'Forum' %}">

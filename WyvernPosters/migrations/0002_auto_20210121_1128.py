@@ -7,7 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('WyvernAdmin', '0001_initial'),
+        ('WyvernPosters', '0001_initial'),
     ]
 
     operations = [

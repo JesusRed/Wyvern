@@ -10,7 +10,7 @@ body {
 
 .bg-img {
     background-color: #2f2f2f;
-    background-image: url(../../../../media/critics/img/bg-img.jpg);
+    background-image: url(../../../../media/general/img/bg-img.jpg);
     background-position: bottom;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -55,7 +55,7 @@ body {
 
 .bg-img2 {
     background-color: #2f2f2f;
-    background-image: url(../../../../media/critics/img/principal.jpg);
+    background-image: url(../../../../media/general/img/principal.jpg);
     background-position: bottom;
     background-repeat: no-repeat;
     background-attachment: fixed;

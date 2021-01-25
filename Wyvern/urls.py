@@ -22,7 +22,8 @@ from WyvernCritics import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('posters/', include('WyvernPosters.urls')),
     path('', include('WyvernCritics.urls'))
 ]
 
-urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
