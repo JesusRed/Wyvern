@@ -39,9 +39,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary',
     'WyvernApp',
     'WyvernPosters',
+    'WyvernCritics',
 ]
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dvukgsudh',
+    'API_KEY': '694676396745582',
+    'API_SECRET': 'sWBzVaADmh5fYAIfeVg2Aj-DyEI',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
