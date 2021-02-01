@@ -23,6 +23,7 @@ from WyvernApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('posters/', include('WyvernPosters.urls')),
+    path('critics/', include('WyvernCritics.urls')),
     path('', include('WyvernApp.urls'))
 ]
 

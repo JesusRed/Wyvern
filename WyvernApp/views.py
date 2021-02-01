@@ -7,10 +7,6 @@ def home(request):
     return render(request, "home.html")
 
 
-def critics(request):
-    return render(request, "critics.html")
-
-
 def forum(request):
     return render(request, "forum.html")
 

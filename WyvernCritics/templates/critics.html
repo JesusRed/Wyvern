@@ -141,4 +141,23 @@
         </div>
     </div>
 
+    <!-- AREA DE CRITICAS/REVIEWS -->
+    <div class="container is-fullhd px-6 py-6">
+        <div class="columns px-6 py-6 is-multiline is-mobile">
+            {% for critics in critics %}
+                <div class="column is-one-third-desktop is-half-mobile">
+                    <article class="message is-dark">
+                        <div class="message-header">
+                            <p>{{ critics.titulo }}</p>
+                        </div>
+                        <div class="message-body">
+                            {{ critics.movie }} <strong>{{ critics.calificacion }}</strong> <br> <br>
+                            {{ critics.critica }} <br> <br> {{ critics.autor }}
+                        </div>
+                    </article>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
 {% endblock %}

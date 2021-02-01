@@ -1,10 +1,13 @@
 from django.urls import path
 from WyvernApp import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
     path('', views.home, name="Home"),
-    path('general', views.critics, name="Critics"),
     path('forum', views.forum, name="Forum"),
     path('contact', views.contact, name="Contact"),
 ]
+
+urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
