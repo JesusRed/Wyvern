@@ -158,6 +158,18 @@
                 </div>
             {% endfor %}
         </div>
+        <div class="px-6 py-6 has-text-centered">
+            <div class="tags are-medium ">
+                {% for person in person %}
+                    {% for role in person.role.all %}
+                        <span class="tag is-dark">
+                           {{ person.name }}
+                       </span>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+
+        </div>
     </div>
 
 {% endblock %}
