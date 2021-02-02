@@ -10,6 +10,3 @@ def home(request):
 def forum(request):
     return render(request, "forum.html")
 
-
-def contact(request):
-    return render(request, "contact.html")

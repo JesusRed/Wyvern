@@ -25,13 +25,13 @@
             <a class="navbar-item {% if request.path == '/posters/' %} is-active {% endif %}" href="{% url 'Posters' %}">
                 Posters
             </a>
-            <a class="navbar-item {% if request.path == '/critics/' %} is-active {% endif %}" href="{% url 'Critics' %}">
+            <a class="navbar-item {% if request.path|slice:':9' == '/critics/' %} is-active {% endif %}" href="{% url 'Critics' %}">
                 Critics
             </a>
             <a class="navbar-item {% if request.path == '/forum' %} is-active {% endif %}" href="{% url 'Forum' %}">
                 Forum
             </a>
-            <a class="navbar-item {% if request.path == '/contact' %} is-active {% endif %}" href="{% url 'Contact' %}">
+            <a class="navbar-item {% if request.path == '/contact/' %} is-active {% endif %}" href="{% url 'Contact' %}">
                 Contact
             </a>
             <a class="navbar-item">

@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('posters/', include('WyvernPosters.urls')),
     path('critics/', include('WyvernCritics.urls')),
+    path('contact/', include('WyvernContact.urls')),
     path('', include('WyvernApp.urls'))
 ]
 

@@ -1,0 +1,45 @@
+{% extends "general/base.html" %}
+
+{% load static %}
+{% block title %}
+    | Movies
+{% endblock title %}
+{% block content %}
+
+    <!-- ENCABEZADO GENERAL -->
+    <section class="hero is-primary is-medium">
+        <div class="hero-body is-dark bg-img-critics">
+            <div class="container has-text-right-widescreen">
+                <blockquote class="background-color">
+                    <h1 class="title is-1">Peliculas de tus directores</h1>
+                    <h2 class="subtitle is-3">Lista y revisa</h2>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- AREA DE MOVIES -->
+    <div class="container is-fullhd px-6 py-6">
+        <div class="columns px-6 py-6 is-multiline is-mobile">
+            {% for movie in movie %}
+                <div class="column is-one-third-desktop is-half-mobile">
+                    <article class="message is-dark">
+                        <div class="message-header">
+                            <p>{{ movie.name }}</p>
+                        </div>
+                        <div class="message-body">
+                            {{ movie.release }} <strong>{{ movie.calificacion }}</strong> <br> <br>
+                            {{ movie.plot }} <br> <br>
+                            {% for person in movie.person.all %}
+                                <span class="tag is-dark">
+                                    {{ person.name }}
+                                </span>
+                            {% endfor %}
+                        </div>
+                    </article>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

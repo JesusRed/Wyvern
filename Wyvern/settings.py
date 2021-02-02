@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'WyvernApp',
     'WyvernPosters',
     'WyvernCritics',
+    'WyvernContact',
 ]
 
 CLOUDINARY_STORAGE = {
