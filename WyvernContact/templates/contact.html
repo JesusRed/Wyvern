@@ -39,6 +39,7 @@
                     <strong>Telefono Secundario: </strong>123-456789
                 </p>
             </div>
+
             <div class="column">
                 <form action="contact.html" method="post">
                     {% csrf_token %}
@@ -48,31 +49,27 @@
                     <div class="field">
                         <label class="label">{{ formu.name.label }}</label>
                         <div class="control">
-                            <input class="input" type="text" placeholder="Text input">
                             {{ formu.name }}
                         </div>
                     </div>
 
                     <div class="columns">
-                        <div class="column is-one-third">
+                        <div class="column is-one-quarter">
                             <div class="field">
-                                <label class="label">Subject</label>
+                                <label class="label">{{ formu.subject.label }}</label>
                                 <div class="control">
-                                    <div class="select">
-                                        <select>
-                                            <option>Asesoria</option>
-                                            <option>Ventas</option>
-                                        </select>
+                                    <div class="select is-rounded">
+                                        {{ formu.subject }}
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="column">
                             <div class="field">
-                                <label class="label">Email</label>
+                                <label class="label">{{ formu.email.label }}</label>
                                 <div class="control has-icons-left has-icons-right">
-                                    <input class="input is-danger" type="email" placeholder="Email input"
-                                           value="hello@">
+                                    {{ formu.email }}
                                     <span class="icon is-small is-left">
                                   <i class="fas fa-envelope"></i>
                                 </span>
@@ -86,9 +83,9 @@
                     </div>
 
                     <div class="field">
-                        <label class="label">Message</label>
+                        <label class="label">{{ formu.message.label }}</label>
                         <div class="control">
-                            <textarea class="textarea" placeholder="Textarea"></textarea>
+                            {{ formu.message }}
                         </div>
                     </div>
 
@@ -104,12 +101,4 @@
         </div>
     </div>
 
-    <!-- FORMULARIO -->
-    <div class="container is-max-widescreen px-6 py-6">
-        <form action="contact.html" method="post">
-            {% csrf_token %}
-            {{ formu }}
-            <input type="submit" value="Submit">
-        </form>
-    </div>
 {% endblock %}
