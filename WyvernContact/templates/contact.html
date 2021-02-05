@@ -19,6 +19,7 @@
     </section>
 
     <!-- TEXTO SECUNDARIO -->
+
     <div class="container is-max-widescreen px-6 py-6">
         <div class="columns ">
             <div class="column is-one-third">
@@ -41,10 +42,13 @@
             </div>
 
             <div class="column">
-                <form action="contact.html" method="post">
+                <form action="" method="post">
                     {% csrf_token %}
                     <h2 class="title is-2 is-spaced">Contact Form</h2>
                     <p class="subtitle is-6">Envianos un correo electronico</p>
+                    {% if "valid"  in request.GET %}
+                        <h5 class="title is-5 has-text-danger-dark">Mensaje enviado!!</h5>
+                    {% endif %}
 
                     <div class="field">
                         <label class="label">{{ formu.name.label }}</label>
@@ -97,8 +101,7 @@
                     </div>
                 </form>
             </div>
-
         </div>
     </div>
-
+{#    {{ request.POST }}#}
 {% endblock %}
