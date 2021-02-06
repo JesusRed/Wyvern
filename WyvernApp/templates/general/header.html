@@ -28,7 +28,7 @@
             <a class="navbar-item {% if request.path|slice:':9' == '/critics/' %} is-active {% endif %}" href="{% url 'Critics' %}">
                 Critics
             </a>
-            <a class="navbar-item {% if request.path == '/forum' %} is-active {% endif %}" href="{% url 'Forum' %}">
+            <a class="navbar-item {% if request.path == '/forum/' %} is-active {% endif %}" href="{% url 'Forum' %}">
                 Forum
             </a>
             <a class="navbar-item {% if request.path == '/contact/' %} is-active {% endif %}" href="{% url 'Contact' %}">
