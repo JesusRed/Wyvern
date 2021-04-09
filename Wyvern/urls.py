@@ -26,6 +26,7 @@ urlpatterns = [
     path('critics/', include('WyvernCritics.urls')),
     path('contact/', include('WyvernContact.urls')),
     path('forum/', include('WyvernForum.urls')),
+    path('login/', include('WyvernUser.urls')),
     path('', include('WyvernApp.urls'))
 ]
 

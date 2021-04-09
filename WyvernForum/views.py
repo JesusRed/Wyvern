@@ -9,4 +9,4 @@ def forum(request):
     posts = PostForum.objects.all()
     users = User.objects.all()
 
-    return render(request, "forum.html", {"users": users})
+    return render(request, "forum.html", {"users": users, "replies": replies, "posts": posts})

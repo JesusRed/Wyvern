@@ -5,8 +5,8 @@ from django.db import models
 class User(models.Model):
     profilepic = models.ImageField(upload_to='profilepic')
     username = models.CharField(max_length=50)
-    created = models.DateField(auto_now_add=True)
-    updated = models.DateField(auto_now_add=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateField(auto_now=True)
 
     class Meta:
         verbose_name = "user"
@@ -20,8 +20,8 @@ class PostForum(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
     message = models.CharField(max_length=500)
-    created = models.DateField(auto_now_add=True)
-    updated = models.DateField(auto_now_add=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateField(auto_now=True)
 
     class Meta:
         verbose_name = "post"
@@ -35,8 +35,8 @@ class ReplyForum(models.Model):
     post = models.ForeignKey(PostForum, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     message = models.CharField(max_length=500)
-    created = models.DateField(auto_now_add=True)
-    updated = models.DateField(auto_now_add=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateField(auto_now=True)
 
     class Meta:
         verbose_name = "reply"

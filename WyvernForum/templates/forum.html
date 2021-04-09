@@ -1,6 +1,8 @@
 {% extends "general/base.html" %}
 
+
 {% load static %}
+{% load humanize %}
 {% block title %}
     | Forum
 {% endblock title %}
@@ -18,6 +20,7 @@
         </div>
     </section>
 
+
     <!-- TEXTO SECUNDARIO -->
     <div class="container is-fullhd px-6 py-6">
         <div class="px-6 py-6 has-text-centered">
@@ -25,83 +28,56 @@
             <h5 class="subtitle is-5">Todo tipo de pensamiento es válido, registra la tuya.</h5>
         </div>
 
-        <article class="media">
-            <figure class="media-left">
-                <p class="image is-64x64">
-                    <img src="https://bulma.io/images/placeholders/128x128.png">
-                </p>
-            </figure>
-            <div class="media-content">
-                <div class="content">
-                    <p>
-                        <strong>Barbara Middleton</strong>
-                        <br>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies
-                        elit blandit non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum. Nunc in tempus
-                        turpis.
-                        <br>
-                        <small><a>Like</a> · <a>Reply</a> · 3 hrs</small>
+        {% for posts in posts %}
+            <article class="media">
+                <figure class="media-left">
+                    <p class="image is-64x64">
+                        <img src="{{ posts.user.profilepic.url }}">
                     </p>
+                </figure>
+
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <strong>{{ posts.user.username }}</strong>
+                            <br>
+                            {{ posts.message }}
+                            <br>
+                            <small><a>Like</a> · <a>Reply</a> · {{ posts.created|naturaltime }}</small>
+                        </p>
+                    </div>
+
+                    {% for replies in replies %}
+                        {% if replies.post_id == posts.id %}
+                            <article class="media">
+                                <figure class="media-left">
+                                    <p class="image is-48x48">
+                                        <img src="{{ replies.user.profilepic.url }}">
+                                    </p>
+                                </figure>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <p>
+                                            <strong>{{ replies.user.username }}</strong>
+                                            <br>
+                                            {{ replies.message }}
+                                            <br>
+                                            <small><a>Like</a> · {{ replies.updated|naturalday }}</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        {% endif %}
+                    {% endfor %}
                 </div>
-
-                <article class="media">
-                    <figure class="media-left">
-                        <p class="image is-48x48">
-                            <img src="https://bulma.io/images/placeholders/96x96.png">
-                        </p>
-                    </figure>
-                    <div class="media-content">
-                        <div class="content">
-                            <p>
-                                <strong>Sean Brown</strong>
-                                <br>
-                                Donec sollicitudin urna eget eros malesuada sagittis. Pellentesque habitant morbi
-                                tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam blandit nisl a
-                                nulla sagittis, a lobortis leo feugiat.
-                                <br>
-                                <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
-                            </p>
-                        </div>
-
-                        <article class="media">
-                            Vivamus quis semper metus, non tincidunt dolor. Vivamus in mi eu lorem cursus ullamcorper
-                            sit amet nec massa.
-                        </article>
-
-                        <article class="media">
-                            Morbi vitae diam et purus tincidunt porttitor vel vitae augue. Praesent malesuada metus sed
-                            pharetra euismod. Cras tellus odio, tincidunt iaculis diam non, porta aliquet tortor.
-                        </article>
-                    </div>
-                </article>
-
-                <article class="media">
-                    <figure class="media-left">
-                        <p class="image is-48x48">
-                            <img src="https://bulma.io/images/placeholders/96x96.png">
-                        </p>
-                    </figure>
-                    <div class="media-content">
-                        <div class="content">
-                            <p>
-                                <strong>Kayli Eunice </strong>
-                                <br>
-                                Sed convallis scelerisque mauris, non pulvinar nunc mattis vel. Maecenas varius felis
-                                sit amet magna vestibulum euismod malesuada cursus libero. Vestibulum ante ipsum primis
-                                in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus lacinia non nisl id
-                                feugiat.
-                                <br>
-                                <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
-                            </p>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </article>
+            </article>
+        {% endfor %}
 
         <div class="px-6 py-6 has-text-centered">
             <button class="button is-black is-rounded is-focused is-outlined">Participar</button>
         </div>
     </div>
+
+
 
 {% endblock %}

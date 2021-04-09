@@ -34,7 +34,7 @@
             <a class="navbar-item {% if request.path == '/contact/' %} is-active {% endif %}" href="{% url 'Contact' %}">
                 Contact
             </a>
-            <a class="navbar-item">
+            <a class="navbar-item {% if request.path == '/user/' %} is-active {% endif %}" href="{% url 'User' %}">
                 <button class="button is-black is-focused is-hovered is-outlined">
                     <span>Login</span>
                     <span class="icon"><i class="fas fa-user"></i></span>

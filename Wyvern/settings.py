@@ -39,12 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'cloudinary',
     'WyvernApp',
     'WyvernPosters',
     'WyvernCritics',
     'WyvernContact',
     'WyvernForum',
+    'WyvernUser',
 ]
 
 CLOUDINARY_STORAGE = {
@@ -121,7 +123,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Bogota'
 
 USE_I18N = True
 
