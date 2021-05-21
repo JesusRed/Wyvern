@@ -25,7 +25,7 @@
     <div class="container is-fullhd px-6 py-6">
         <div class="px-6 py-6 has-text-centered">
             <h4 class="title is-4">Diversidad de perspectivas</h4>
-            <h5 class="subtitle is-5">Todo tipo de pensamiento es válido, registra la tuya.</h5>
+            <h5 class="subtitle is-5">Todo tipo de pensamiento es válido, registra la tuya. {{import_favs}} </h5>
         </div>
 
         {% for posts in posts %}
@@ -41,9 +41,12 @@
                         <p>
                             <strong>{{ posts.user.username }}</strong>
                             <br>
-                            {{ posts.message }}
+                            {{ posts.message }}&nbsp
                             <br>
-                            <small><a>Like</a> · <a>Reply</a> · {{ posts.created|naturaltime }}</small>
+                            <small>
+                            <a class="button is-small">Like</a> · <a>Reply</a> · 
+                            {{ posts.created|naturaltime }}
+                            </small>
                         </p>
                     </div>
 
