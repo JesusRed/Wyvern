@@ -6,8 +6,8 @@ class Favs:
 
         if not favs:
             favs = self.session["favs"] = {}
-        else:
-            self.favs = favs
+        # else:
+        self.favs = favs
 
     def add(self, comment):
         if(str(comment.id) not in self.favs.keys()):

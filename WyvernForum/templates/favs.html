@@ -1,0 +1,31 @@
+<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+  <thead>
+    <tr>
+      <th colspan="3" class="has-text-centered">LISTA DE FAVORITOS</th>
+    </tr>
+    <tr>
+      <th>POST</th>
+      <th>USER</th>
+      <th>MENSAJE</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% if request.session.favs.items %} 
+        {% for key, value in request.session.favs.items %}
+    <tr class="has-text-centered">
+      <td>{{ value.title }}</td>
+      <td>{{ value.cantidad }}</td>
+      <td>
+        <a href="{% url 'Add' value.comment_id%}" class="button is-small">+</a>
+      </td>
+    </tr>
+        {%endfor%} 
+    {% else %}
+    <tr>
+      <td colspan="3">
+        <div class="has-background-danger-light">No hay favoritos</div>
+      </td>
+    </tr>
+    {%endif%}
+  </tbody>
+</table>

@@ -1,86 +1,86 @@
 {% extends "general/base.html" %}
-
-
-{% load static %}
-{% load humanize %}
-{% block title %}
-    | Forum
-{% endblock title %}
+{% load static %} 
+{% load humanize %} 
+{% block title %} 
+| Forum 
+{% endblock title %} 
 {% block content %}
 
-    <!-- ENCABEZADO GENERAL -->
-    <section class="hero is-primary is-medium">
-        <div class="hero-body is-dark bg-img-forum">
-            <div class="container has-text-left-widescreen">
-                <blockquote class="background-color">
-                    <h1 class="title is-1">Participa con tu opinión</h1>
-                    <h3 class="subtitle is-4">Discute ante una gran variedad de perspectivas.</h3>
-                </blockquote>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- TEXTO SECUNDARIO -->
-    <div class="container is-fullhd px-6 py-6">
-        <div class="px-6 py-6 has-text-centered">
-            <h4 class="title is-4">Diversidad de perspectivas</h4>
-            <h5 class="subtitle is-5">Todo tipo de pensamiento es válido, registra la tuya. {{import_favs}} </h5>
-        </div>
-
-        {% for posts in posts %}
-            <article class="media">
-                <figure class="media-left">
-                    <p class="image is-64x64">
-                        <img src="{{ posts.user.profilepic.url }}">
-                    </p>
-                </figure>
-
-                <div class="media-content">
-                    <div class="content">
-                        <p>
-                            <strong>{{ posts.user.username }}</strong>
-                            <br>
-                            {{ posts.message }}&nbsp
-                            <br>
-                            <small>
-                            <a class="button is-small">Like</a> · <a>Reply</a> · 
-                            {{ posts.created|naturaltime }}
-                            </small>
-                        </p>
-                    </div>
-
-                    {% for replies in replies %}
-                        {% if replies.post_id == posts.id %}
-                            <article class="media">
-                                <figure class="media-left">
-                                    <p class="image is-48x48">
-                                        <img src="{{ replies.user.profilepic.url }}">
-                                    </p>
-                                </figure>
-                                <div class="media-content">
-                                    <div class="content">
-                                        <p>
-                                            <strong>{{ replies.user.username }}</strong>
-                                            <br>
-                                            {{ replies.message }}
-                                            <br>
-                                            <small><a>Like</a> · {{ replies.updated|naturalday }}</small>
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            </article>
-        {% endfor %}
-
-        <div class="px-6 py-6 has-text-centered">
-            <button class="button is-black is-rounded is-focused is-outlined">Participar</button>
-        </div>
+<!-- ENCABEZADO GENERAL -->
+<section class="hero is-primary is-medium">
+  <div class="hero-body is-dark bg-img-forum">
+    <div class="container has-text-left-widescreen">
+      <blockquote class="background-color">
+        <h1 class="title is-1">Participa con tu opinión</h1>
+        <h3 class="subtitle is-4">
+          Discute ante una gran variedad de perspectivas.
+        </h3>
+      </blockquote>
     </div>
+  </div>
+</section>
 
+<!-- TEXTO SECUNDARIO -->
+<div class="container is-fullhd px-6 py-6">
+  <div class="px-6 py-6 has-text-centered">
+    <h4 class="title is-4">Diversidad de perspectivas</h4>
+    <h5 class="subtitle is-5">
+      Todo tipo de pensamiento es válido, registra la tuya.
+    </h5>
+    {% include "favs.html" %}
+  </div>
 
+  {% for posts in posts %}
+  <article class="media">
+    <figure class="media-left">
+      <p class="image is-64x64">
+        <img src="{{ posts.user.profilepic.url }}" />
+      </p>
+    </figure>
+
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong>{{ posts.user.username }}</strong>
+          <br />
+          {{ posts.message }}&nbsp
+          <br />
+          <small>
+            <a href="{% url 'Add' posts.id %}" class="button is-small"> Like</a>
+            · <a>Reply</a> · {{ posts.created|naturaltime }}
+          </small>
+        </p>
+      </div>
+
+      {% for replies in replies %} {% if replies.post_id == posts.id %}
+      <article class="media">
+        <figure class="media-left">
+          <p class="image is-48x48">
+            <img src="{{ replies.user.profilepic.url }}" />
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>{{ replies.user.username }}</strong>
+              <br />
+              {{ replies.message }}
+              <br />
+              <small><a>Like</a> · {{ replies.updated|naturalday }}</small>
+            </p>
+          </div>
+        </div>
+      </article>
+      {% endif %} {% endfor %}
+    </div>
+  </article>
+  {% endfor %}
+
+  <div class="px-6 py-6 has-text-centered">
+    <button class="button is-black is-rounded is-focused is-outlined">
+      Participar
+    </button>
+  </div>
+</div>
 
 {% endblock %}
